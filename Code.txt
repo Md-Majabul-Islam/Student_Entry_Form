@@ -1,0 +1,37 @@
+
+using System;
+using System.Windows.Forms;
+namespace WindowsFormsApp2
+{
+ public partial class studentEntryForm : Form
+ {
+ private string name;
+ private string address;
+ private string contactNo;
+
+ public studentEntryForm()
+ {
+ InitializeComponent();
+ }
+
+ private void saveButton_Click(object sender, EventArgs e)
+ {
+ name = nameTextBox.Text;
+ address = addressRichTextBox.Text;
+ contactNo = contactNoTextBox.Text;
+
+ MessageBox.Show("save Successfully!!");
+
+ nameTextBox.Clear();
+ addressRichTextBox.Text = string.Empty;
+ contactNoTextBox.Text = "";
+ }
+
+ private void showButton_Click(object sender, EventArgs e)
+ {
+ MessageBox.Show("Student Name: "+name);
+ MessageBox.Show("Address: " + address);
+ MessageBox.Show("Contact Number: " + contactNo);
+ }
+ }
+}
